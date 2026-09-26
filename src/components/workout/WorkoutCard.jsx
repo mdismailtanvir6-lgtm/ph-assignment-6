@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Clock, Flame, Star } from "lucide-react";
-import WorkoutCardAction from "./WorkoutCardAction";
+import WorkoutActions from "@/components/workoutDetails/WorkoutActions";
 
 export default function WorkoutCard({ workout }) {
   return (
@@ -67,7 +67,7 @@ export default function WorkoutCard({ workout }) {
         </div>
 
         {/* Actions for just checking functionality */}
-        {/* <WorkoutCardAction workout={workout} />  */}
+        {/* <WorkoutActions workout={workout} />  */}
       </div>
     </div>
   );
