@@ -24,7 +24,7 @@ export default function WorkoutSpecs({ workout }) {
     },
     {
       label: "CALORIES",
-      value: workout.calories || "180 kcal",
+      value: workout.caloriesBurned || "180 kcal",
     },
     {
       label: "RATING",

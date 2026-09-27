@@ -1,24 +1,23 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Clock, Flame, Star } from "lucide-react";
-import WorkoutActions from "@/components/workoutDetails/WorkoutActions";
 
 export default function WorkoutCard({ workout }) {
   return (
-    <div className="group flex flex-col bg-[#13141c] rounded-xl overflow-hidden border border-zinc-800/80 hover:border-[#c2f800]/50 transition-all duration-300 hover:shadow-lg hover:shadow-[#c2f800]/5">
+    <Link
+      href={`/workouts/${workout.id}`}
+      className="group flex flex-col bg-[#13141c] rounded-xl overflow-hidden border border-zinc-800/80 hover:border-[#c2f800]/50 transition-all duration-300 hover:shadow-lg hover:shadow-[#c2f800]/5"
+    >
       {/* Image */}
-      <Link
-        href={`/workouts/${workout.id}`}
-        className="relative w-full aspect-16/10 bg-zinc-900 overflow-hidden block"
-      >
+      <div className="relative w-full aspect-16/10 bg-zinc-900 overflow-hidden block">
         <Image
           src={workout.image}
           alt={workout.name}
           fill
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-          className="object-cover group-hover:scale-105 transition-transform duration-500"
+          className="aspect-16/10 object-cover group-hover:scale-105 transition-transform duration-500"
         />
-      </Link>
+      </div>
 
       {/* Content */}
       <div className="p-5 flex flex-col flex-1 justify-between space-y-4">
@@ -57,7 +56,7 @@ export default function WorkoutCard({ workout }) {
 
           <div className="flex items-center space-x-1">
             <Flame className="w-3.5 h-3.5 text-zinc-500" />
-            <span>{workout.calories}</span>
+            <span>{workout.caloriesBurned}</span>
           </div>
 
           <div className="flex items-center space-x-1">
@@ -65,10 +64,7 @@ export default function WorkoutCard({ workout }) {
             <span className="text-zinc-300">{workout.rating}</span>
           </div>
         </div>
-
-        {/* Actions for just checking functionality */}
-        {/* <WorkoutActions workout={workout} />  */}
       </div>
-    </div>
+    </Link>
   );
 }

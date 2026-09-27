@@ -55,7 +55,7 @@ export default function MyPlanPage() {
       ),
 
       totalCalories: planCount.reduce(
-        (sum, item) => sum + (Number(item.calories) || 0),
+        (sum, item) => sum + (Number(item.caloriesBurned) || 0),
         0,
       ),
     };
