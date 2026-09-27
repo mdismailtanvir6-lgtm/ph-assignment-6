@@ -9,7 +9,7 @@ export default function PlanSort({ sortBy, onChange }) {
         className="select appearance-none w-36 bg-[#13161c] border border-gray-800/80 text-xs text-white font-medium rounded-lg px-3 py-2 outline-none focus:border-gray-600 cursor-pointer"
       >
         <option value="duration">Duration</option>
-        <option value="calories">Calories</option>
+        <option value="caloriesBurned">Calories</option>
         <option value="rating">Rating</option>
       </select>
     </div>

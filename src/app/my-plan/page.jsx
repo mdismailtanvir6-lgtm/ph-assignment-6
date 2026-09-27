@@ -70,8 +70,8 @@ export default function MyPlanPage() {
         return Number(b.duration || 0) - Number(a.duration || 0);
       }
 
-      if (sortBy === "calories") {
-        return Number(b.calories || 0) - Number(a.calories || 0);
+      if (sortBy === "caloriesBurned") {
+        return Number(b.caloriesBurned || 0) - Number(a.caloriesBurned || 0);
       }
 
       if (sortBy === "rating") {

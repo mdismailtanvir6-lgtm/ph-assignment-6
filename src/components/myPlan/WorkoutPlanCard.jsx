@@ -10,7 +10,7 @@ export default function WorkoutPlanCard({
   onRemove,
   onMarkAsDone,
 }) {
-  const { id, title, name, equipment, duration, calories, rating, image } =
+  const { id, title, name, equipment, duration, caloriesBurned, rating, image } =
     workout;
 
   const workoutTitle = title || name;
@@ -44,7 +44,7 @@ export default function WorkoutPlanCard({
 
             <span className="flex items-center gap-1">
               <Flame className="w-3.5 h-3.5 text-[#ccff00]" />
-              {calories} kcal
+              {caloriesBurned} kcal
             </span>
 
             <span className="flex items-center gap-1">
@@ -68,7 +68,7 @@ export default function WorkoutPlanCard({
           <button
             type="button"
             onClick={onMarkAsDone}
-            className="flex items-center gap-1.5 text-xs font-bold bg-[#ccff00] text-black hover:bg-[#b8e600] rounded-full px-4 py-2 transition-colors"
+            className="flex items-center gap-1.5 text-xs font-bold bg-[#ccff00] text-black hover:bg-[#b8e600] rounded-full px-4 py-2 transition-colors cursor-pointer"
           >
             <Check className="w-3.5 h-3.5" />
             Mark as Done
@@ -78,7 +78,7 @@ export default function WorkoutPlanCard({
         <button
           type="button"
           onClick={onRemove}
-          className="text-gray-400 hover:text-white p-1 rounded-lg transition-colors ml-1"
+          className="text-gray-400 hover:text-white p-1 rounded-lg transition-colors ml-1 cursor-pointer"
           aria-label={`Remove ${workoutTitle}`}
         >
           <X className="w-4 h-4" />

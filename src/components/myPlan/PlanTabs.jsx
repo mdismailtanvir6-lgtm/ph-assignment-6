@@ -6,7 +6,7 @@ export default function PlanTabs({ activeTab, onChange }) {
         className={`px-5 py-2 text-xs font-bold rounded-lg transition-colors ${
           activeTab === "today"
             ? "bg-[#1f242d] text-white"
-            : "text-gray-400 hover:text-white"
+            : "text-gray-400 hover:text-white cursor-pointer"
         }`}
       >
         Today&apos;s Plan
@@ -17,7 +17,7 @@ export default function PlanTabs({ activeTab, onChange }) {
         className={`px-5 py-2 text-xs font-bold rounded-lg transition-colors ${
           activeTab === "saved"
             ? "bg-[#1f242d] text-white"
-            : "text-gray-400 hover:text-white"
+            : "text-gray-400 hover:text-white cursor-pointer"
         }`}
       >
         Saved
