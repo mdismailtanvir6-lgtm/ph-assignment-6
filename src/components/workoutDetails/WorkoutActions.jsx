@@ -12,6 +12,11 @@ export default function WorkoutActions({ workout, showToast }) {
   const handleAddToPlan = () => {
     if (isAdded) return;
 
+    if (planCount.length >= 5) {
+      showToast("You can only add up to 5 workouts to today's plan");
+      return;
+    }
+
     setPlanCount((prev) => [...prev, workout]);
     showToast("Added to today's plan");
   };
