@@ -1,7 +1,5 @@
 import { notFound } from "next/navigation";
 import WorkoutDetails from "@/components/workoutDetails/WorkoutDetails";
-import { Suspense } from "react";
-import WorkoutDetailsSkeleton from "@/components/workoutDetails/WorkoutDetailsSkeleton";
 
 async function getWorkout(id) {
   try {
@@ -38,9 +36,5 @@ export default async function WorkoutDetailPage({ params }) {
     notFound();
   }
 
-  return (
-    <Suspense fallback={<WorkoutDetailsSkeleton />}>
-      <WorkoutDetails workout={workout} />
-    </Suspense>
-  );
+  return <WorkoutDetails workout={workout} />;
 }
